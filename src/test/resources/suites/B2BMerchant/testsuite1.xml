@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Fawry">
+    <parameter name="url" value="https://delta.supply-chain.fawry.io/be-login/auth/login" />
+    <listeners>
+        <listener class-name="com.fawry.listeners.TestExecutionListener"/>
+    </listeners>
+    <test name="Test">
+        <parameter name="User" value="DELTA_BE"/>
+        <classes>
+            <class name="com.fawry.tests.B2BMerchant.AddMerchantTest"/>
+            <class name="com.fawry.tests.B2BMerchant.MerchantListTest"/>
+            <class name="com.fawry.tests.B2BMerchant.RequestListTest">
+            </class>
+        </classes>
+    </test>
+</suite>
+

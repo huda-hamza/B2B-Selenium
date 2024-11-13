@@ -1,0 +1,22 @@
+stages:
+  - Automation_Test
+
+Automation_Test:
+  stage: Automation_Test
+  #image: harbor10.fawry.io/test/maven-chrome-driver:openjdk-17
+  image: harbor10.fawry.io/test/maven-chrome-driver-ca:openjdk-17
+  script:
+    #- wget "https://gitlab.fawry.io/devops/ci-cd/api-pipeline-spring/-/raw/main/Scripts/settings.xml"
+    #- mvn -s settings.xml -P regression test
+    - mvn -P regression test
+    - ls
+    - ls target
+  tags:
+    - squad
+  artifacts:
+    when: always
+    name: "report"
+    paths:
+      - ./root/.m2
+      - ./target/reports/*.html
+      - ./target/surefire-reports/TEST-*.xml

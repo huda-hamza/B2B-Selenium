@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Selenium Suite">
+    <parameter name="url" value="https://delta.supply-chain.fawry.io/be-login/auth/login" />
+    <listeners>
+        <listener class-name="com.fawry.listeners.TestExecutionListener"/>
+    </listeners>
+    <test name="Group 1 Tests">
+        <parameter name="User" value="DELTA_BE"/>
+        <groups>
+            <run>
+                <include name="group1"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.fawry.tests.B2BMerchant.CustomerApplicationTest"/>
+        </classes>
+    </test>
+
+</suite>
