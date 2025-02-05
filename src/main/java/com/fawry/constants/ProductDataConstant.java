@@ -26,5 +26,13 @@ public class ProductDataConstant {
     //=================================================================================
 
     public static final String Product_PricingList ="B2B_Product_PricingSchemaList";
+    public static final String Product_AddPricing="B2B_Product_AddPricingSchema";
 
+    public static final String Product_Name="ProductName";
+    public static final String Barcode="BarCode";
+    public static final String Sku="SKU";
+
+    //================================
+
+    public static final String Branch_Management="BranchManagement";
 }

@@ -1,15 +1,12 @@
-package com.fawry.pages.B2BMerchant;
+package com.fawry.pages.b2BMerchant;
 
 import com.fawry.constants.B2BMerchantFile_NameConstants;
 import com.fawry.constants.MerchantdataConstant;
 import com.fawry.pages.base.HomePage;
 import com.fawry.pages.base.PageBase;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -286,6 +283,7 @@ public class RequestList extends PageBase {
         uploadFile(enterExcelFile, uploadDirectoryPath + "add-merchants-sample.xlsx");
         System.out.println(uploadDirectoryPath + "add-merchants-sample.xlsx");
     }
+
 
     public Boolean updateDownSuccess() throws IOException {
         waitForFileToBeDownloaded(downloadDirectoryPath + "merchant-requests.xlsx");

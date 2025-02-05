@@ -7,9 +7,9 @@
     <test name="Test">
         <parameter name="User" value="DELTA_BE"/>
         <classes>
-            <class name="com.fawry.tests.B2BMerchant.AddMerchantTest"/>
-            <class name="com.fawry.tests.B2BMerchant.MerchantListTest"/>
-            <class name="com.fawry.tests.B2BMerchant.RequestListTest">
+            <class name="com.fawry.tests.b2BMerchant.AddMerchantTest"/>
+            <class name="com.fawry.tests.b2BMerchant.MerchantListTest"/>
+            <class name="com.fawry.tests.b2BMerchant.RequestListTest">
             </class>
         </classes>
     </test>

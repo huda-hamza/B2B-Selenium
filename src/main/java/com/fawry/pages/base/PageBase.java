@@ -4,15 +4,15 @@ import com.fawry.constants.GeneralConstants;
 import com.fawry.constants.PathConstants;
 import com.fawry.utilities.Log;
 import com.fawry.utilities.PropertiesReader;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
@@ -37,7 +37,7 @@ public class PageBase {
     public static final String downloadDirectoryPath = System.getProperty(GeneralConstants.USER_DIR) + pathsProperties.getProperty(PathConstants.DOWNLOAD_DIRECTORY);
     public static final String uploadDirectoryPath = System.getProperty(GeneralConstants.USER_DIR)+pathsProperties.getProperty(PathConstants.UPLOAD_DIRECTORY);
     private static final Duration waitTime = Duration.ofSeconds(60);
-
+    private static final Duration pollingTime = Duration.ofMillis(500);
     @FindBy(xpath = "//*[@role='option']")
     public List<WebElement> selectOptions;
 
@@ -317,6 +317,7 @@ public class PageBase {
         } else
             throw new Exception("Web element 'dropDown' is null .. it could not be located");
     }
+
 
     public void selectDateRange(By locator, By monthTextLocator, By yearTextLocator, By nextBtnLocator, By previousBtnLocator, String dayMonthYearValTo, String dayMonthYearValFrom, By afterSelectLocator) throws Exception {
         waitForElementToBeClickable(locator);
@@ -629,6 +630,58 @@ public class PageBase {
         findElement(locator).sendKeys(filePath);
     }
 
+    public void waitForVisibilityOfList(By locator) {
+        Wait<WebDriver> wait = new FluentWait<>(driver)
+                .withTimeout(waitTime)
+                .pollingEvery(pollingTime)
+                .ignoring(NoSuchElementException.class)
+                .ignoring(ElementNotInteractableException.class)
+                .ignoring(org.openqa.selenium.StaleElementReferenceException.class);
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+    }
+
+
+    public void scrollAndClickByJSE(By locator) throws Exception {
+        if (locator != null) {
+            scrollToElement(locator);
+            clickJSE(locator);
+        } else
+            throw new Exception("Web element 'locator' is null .. it could not be located");
+    }
+    public void scrollToElement(By locator) {
+        jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].scrollIntoView({block: 'center'});", findElement(locator));
+       // waits.waitForElementToBeInViewport(locator);
+    }
+
+    public void selectDateRange2(By locator, By monthTextLocator, By yearTextLocator, By nextBtnLocator, By previousBtnLocator, String dayMonthYearValTo, String dayMonthYearValFrom, By afterSelectLocator) throws Exception {
+        scrollAndClickByJSE(locator);
+        String month = getText(monthTextLocator);
+        String year = getText(yearTextLocator);
+        String dayTo = dayMonthYearValTo.split(" ")[0].trim();
+        String monthTo = dayMonthYearValTo.split(" ")[1].trim();
+        String yearTo = dayMonthYearValTo.split(" ")[2].trim();
+        int dayFrom = Integer.parseInt(dayMonthYearValFrom.split(" ")[0].trim()) - 1;
+        String monthFrom = dayMonthYearValFrom.split(" ")[1].trim();
+        String yearFrom = dayMonthYearValFrom.split(" ")[2].trim();
+        // To Select Date To
+        while (!(month.equals(monthTo) && year.equals(yearTo))) {
+            click(previousBtnLocator);
+            month = getText(monthTextLocator);
+            year = getText(yearTextLocator);
+            monthTo = dayMonthYearValTo.split(" ")[1].trim();
+            yearTo = dayMonthYearValTo.split(" ")[2].trim();
+        }
+        click(By.xpath("//span[text()= '" + dayTo + "']"));
+        // To Select Date From
+        while (!(monthTo.equals(monthFrom) && yearTo.equals(yearFrom))) {
+            click(nextBtnLocator);
+            monthFrom = dayMonthYearValFrom.split(" ")[1].trim();
+            yearFrom = dayMonthYearValFrom.split(" ")[2].trim();
+        }
+        click(By.xpath("//span[text()= '" + dayFrom + "']"));
+       // click(afterSelectLocator);
+    }
 }
 
 

@@ -9,6 +9,7 @@ public class B2BMerchantFile_NameConstants {
         public static final String  Product_UOM_File_Name ="UOM.properties";
 
         public static final String Product_PricingList_File_Name="PricingSchema.properties";
+        public static final String  productBranchManagement_File_Name="ProductBranchManagement.properties";
 
     ////////////////////////////////////////////////////////////////////
 

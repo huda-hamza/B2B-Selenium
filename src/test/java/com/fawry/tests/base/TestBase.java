@@ -55,7 +55,7 @@ public class TestBase extends TestExecutionListener {
         options.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.ACCEPT);
         //options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
         options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
-       // options.addArguments("--headless=new");
+        //options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-gpu");
         options.addArguments("--start-maximized");
@@ -70,7 +70,7 @@ public class TestBase extends TestExecutionListener {
 
     @Parameters({"url", "User"})
     @BeforeTest(alwaysRun = true)
-    public void setup(@Optional("https://delta.supply-chain.fawry.io/be-login/auth/login") String url, @Optional("DELTA_BE") String User) {
+    public void setup(@Optional("https://delta.supply-chain.fawry.io/be-login/auth/login") String url, @Optional("BO") String User) {
         try {
             Log.info("Initialize Selenium WebDriver");
             WebDriverManager.chromedriver().setup();

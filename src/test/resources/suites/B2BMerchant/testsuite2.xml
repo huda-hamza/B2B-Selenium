@@ -12,7 +12,7 @@
             </run>
         </groups>
         <classes>
-            <class name="com.fawry.tests.B2BMerchant.CustomerApplicationTest"/>
+            <class name="com.fawry.tests.b2BMerchant.CustomerApplicationTest"/>
         </classes>
     </test>
 
