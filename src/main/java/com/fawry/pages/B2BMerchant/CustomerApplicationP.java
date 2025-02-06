@@ -1,4 +1,4 @@
-package com.fawry.pages.b2BMerchant;
+package com.fawry.pages.B2BMerchant;
 
 import com.fawry.constants.B2BMerchantFile_NameConstants;
 import com.fawry.constants.MerchantdataConstant;
