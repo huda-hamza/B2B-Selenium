@@ -70,7 +70,7 @@ public class TestBase extends TestExecutionListener {
 
     @Parameters({"url", "User"})
     @BeforeTest(alwaysRun = true)
-    public void setup(@Optional("https://delta.supply-chain.fawry.io/be-login/auth/login") String url, @Optional("BO") String User) {
+    public void setup(@Optional("https://delta.supply-chain.fawry.io/be-login/auth/login") String url, @Optional("DELTA_BE") String User) {
         try {
             Log.info("Initialize Selenium WebDriver");
             WebDriverManager.chromedriver().setup();
