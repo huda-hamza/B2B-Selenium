@@ -1,9 +1,10 @@
 package com.fawry.pages.b2BProduct;
 
-import com.fawry.constants.B2BMerchantFile_NameConstants;
+import com.fawry.constants.b2BMerchant.B2BMerchantFile_NameConstants;
 import com.fawry.constants.GeneralConstants;
 import com.fawry.constants.PathConstants;
-import com.fawry.constants.ProductDataConstant;
+import com.fawry.constants.b2bProduct.B2BProductFile_NameConstants;
+import com.fawry.constants.b2bProduct.ProductDataConstant;
 import com.fawry.pages.base.PageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,7 +20,7 @@ public class AddPricingSchema extends PageBase {
     }
 
 
-    private static final Properties URl = propertiesReader.loadPropertiesFromFile(B2BMerchantFile_NameConstants.Product_PricingList_File_Name);
+    private static final Properties URl = propertiesReader.loadPropertiesFromFile(B2BProductFile_NameConstants.Product_PricingList_File_Name);
 
 
     public void navigateToAddPricingSchema(String environment) throws Exception {

@@ -1,8 +1,7 @@
 package com.fawry.tests.b2BOrder;
 
-import com.fawry.constants.B2BMerchantFile_NameConstants;
-import com.fawry.constants.B2BOrderFile_NameConstants;
-import com.fawry.constants.OrderDataConstant;
+import com.fawry.constants.b2BOrder.B2BOrderFile_NameConstants;
+import com.fawry.constants.b2BOrder.OrderDataConstant;
 import com.fawry.pages.b2BOrder.DashBord;
 import com.fawry.tests.base.TestBase;
 import org.testng.annotations.BeforeClass;
@@ -51,7 +50,7 @@ public class DashboardTest extends TestBase {
     public void ValidateSelectingValidDifferentDateRange() throws Exception {
         try {
             dashObj.selectDateRange(startDate, endDate);
-            dashObj.searchBtn();
+          //  dashObj.searchBtn();
             softAssert.assertEquals(dashObj.selectedDataRange(), "12/01/2024 - 12/29/2024");
             softAssert.assertAll();
         } catch (Exception e) {
@@ -91,6 +90,7 @@ public class DashboardTest extends TestBase {
     public void ValidateUnpaidCardPaymentStatusIsClickable() throws Exception {
         try {
             dashObj.selectDateRange(startDates, endDates);
+            dashObj.searchBtn();
             dashObj.searchBtn();
             dashObj.navigateToUnpaidOrders();
             softAssert.assertEquals(dashObj.numberOfOrders(), 9);

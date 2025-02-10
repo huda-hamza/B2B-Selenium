@@ -1,7 +1,8 @@
 package com.fawry.pages.b2BProduct;
 
-import com.fawry.constants.B2BMerchantFile_NameConstants;
-import com.fawry.constants.ProductDataConstant;
+import com.fawry.constants.b2BMerchant.B2BMerchantFile_NameConstants;
+import com.fawry.constants.b2bProduct.B2BProductFile_NameConstants;
+import com.fawry.constants.b2bProduct.ProductDataConstant;
 import com.fawry.pages.base.PageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +10,6 @@ import org.openqa.selenium.WebElement;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Properties;
 
 public class ProductBranchManagement extends PageBase {
@@ -17,7 +17,7 @@ public class ProductBranchManagement extends PageBase {
         super(driver);
     }
 
-    private static final Properties URl = propertiesReader.loadPropertiesFromFile(B2BMerchantFile_NameConstants.productBranchManagement_File_Name);
+    private static final Properties URl = propertiesReader.loadPropertiesFromFile(B2BProductFile_NameConstants.productBranchManagement_File_Name);
 
     private By selectBranch = By.xpath("//span[text()='Select Branch']");
     private By branchStatus = By.xpath("//span[contains(@class,'p-message-summary')]");

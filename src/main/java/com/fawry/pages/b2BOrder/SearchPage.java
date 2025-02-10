@@ -1,7 +1,7 @@
 package com.fawry.pages.b2BOrder;
 
-import com.fawry.constants.B2BOrderFile_NameConstants;
-import com.fawry.constants.OrderDataConstant;
+import com.fawry.constants.b2BOrder.B2BOrderFile_NameConstants;
+import com.fawry.constants.b2BOrder.OrderDataConstant;
 import com.fawry.pages.base.PageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

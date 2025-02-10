@@ -1,7 +1,8 @@
 package com.fawry.pages.b2BProduct;
 
-import com.fawry.constants.B2BMerchantFile_NameConstants;
-import com.fawry.constants.ProductDataConstant;
+import com.fawry.constants.b2BMerchant.B2BMerchantFile_NameConstants;
+import com.fawry.constants.b2bProduct.B2BProductFile_NameConstants;
+import com.fawry.constants.b2bProduct.ProductDataConstant;
 import com.fawry.pages.base.PageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -14,7 +15,7 @@ public class UOMList extends PageBase {
         super(driver);
     }
 
-    private static final Properties URl = propertiesReader.loadPropertiesFromFile(B2BMerchantFile_NameConstants.Product_UOM_File_Name);
+    private static final Properties URl = propertiesReader.loadPropertiesFromFile(B2BProductFile_NameConstants.Product_UOM_File_Name);
     private By editBtn = By.xpath("//button[contains(@class,'edit')]");
     private By trashBtn = By.xpath("//button[contains(@class,'p-button-danger')]");
     private By editEnglishName = By.name("nameEn");
@@ -49,8 +50,9 @@ public class UOMList extends PageBase {
     }
 
     public String NameForExistEnglishNameForAssertion() throws Exception {
-       return getText(ExistValueEnglishNAme);
+        return getText(ExistValueEnglishNAme);
     }
+
     public void ClearArabicName() throws Exception {
         driver.findElement(editArabicName).sendKeys(Keys.chord(Keys.CONTROL, "a"));
         driver.findElement(editArabicName).sendKeys(Keys.DELETE);
@@ -89,10 +91,14 @@ public class UOMList extends PageBase {
     }
 
     public Boolean ConfirmationMessage() {
-        if (driver.findElement(messageSuccess).isDisplayed())
-            return true;
-        else
+        try {
+            waitForElementsToBePresent(messageSuccess);
+            if (driver.findElement(messageSuccess).isDisplayed())
+                return true;
+            else return false;
+        } catch (Exception e) {
             return false;
+        }
     }
 
 

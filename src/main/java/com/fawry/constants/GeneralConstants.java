@@ -10,8 +10,8 @@ public class GeneralConstants {
 
 
     //  ########################### FILE NAMES ###########################
-    public static final String GENERAL_CONFIGURATION_FILE_NAME = "GeneralConfiguration.properties";
-    public static final String PATHS_CONFIGURATION_FILE_NAME = "PathsConfigurations.properties";
+    public static final String GENERAL_CONFIGURATION_FILE_NAME = "//src//test//resources//configuration//GeneralConfiguration.properties";
+    public static final String PATHS_CONFIGURATION_FILE_NAME = "//src//test//resources//configuration//PathsConfigurations.properties";
 
 
     //  ###########################   credential properties key names ###########################

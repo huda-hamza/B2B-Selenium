@@ -1,8 +1,8 @@
-package com.fawry.tests.B2BMerchant;
+package com.fawry.tests.b2BMerchant;
 
-import com.fawry.constants.B2BMerchantFile_NameConstants;
-import com.fawry.constants.MerchantdataConstant;
-import com.fawry.pages.B2BMerchant.CustomerApplicationP;
+import com.fawry.constants.b2BMerchant.B2BMerchantFile_NameConstants;
+import com.fawry.constants.b2BMerchant.MerchantdataConstant;
+import com.fawry.pages.b2BMerchant.CustomerApplicationP;
 import com.fawry.pages.base.HomePage;
 import com.fawry.tests.base.TestBase;
 import org.testng.Assert;

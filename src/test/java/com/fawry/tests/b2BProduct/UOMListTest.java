@@ -1,7 +1,8 @@
 package com.fawry.tests.b2BProduct;
 
-import com.fawry.constants.B2BMerchantFile_NameConstants;
-import com.fawry.constants.ProductDataConstant;
+import com.fawry.constants.b2BMerchant.B2BMerchantFile_NameConstants;
+import com.fawry.constants.b2bProduct.B2BProductFile_NameConstants;
+import com.fawry.constants.b2bProduct.ProductDataConstant;
 import com.fawry.pages.b2BProduct.UOMList;
 import com.fawry.pages.base.HomePage;
 import com.fawry.tests.base.TestBase;
@@ -18,7 +19,7 @@ public class UOMListTest extends TestBase {
     UOMList UOMListObj;
 
     String timeStamp = new SimpleDateFormat("hhmmss").format(new Date());
-    private static final Properties testdata = propertiesReader.loadPropertiesFromFile(B2BMerchantFile_NameConstants.Product_UOM_File_Name);
+    private static final Properties testdata = propertiesReader.loadPropertiesFromFile(B2BProductFile_NameConstants.Product_UOM_File_Name);
     String environment = com.fawry.constants.GeneralConstants.DELTA_ENVIRONMENT;
 
     String Arabic_Name = testdata.getProperty(ProductDataConstant.ArabicName) + timeStamp;

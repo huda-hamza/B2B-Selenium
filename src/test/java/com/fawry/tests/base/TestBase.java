@@ -1,7 +1,6 @@
 package com.fawry.tests.base;
 
 //import com.fawry.backendservices.ServicesDelegate;
-import com.fawry.constants.B2BMerchantFile_NameConstants;
 import com.fawry.constants.GeneralConstants;
 import com.fawry.constants.PathConstants;
 import com.fawry.listeners.TestExecutionListener;

@@ -1,6 +1,7 @@
 package com.fawry.tests.b2BProduct;
 
-import com.fawry.constants.B2BMerchantFile_NameConstants;
+import com.fawry.constants.b2BMerchant.B2BMerchantFile_NameConstants;
+import com.fawry.constants.b2bProduct.B2BProductFile_NameConstants;
 import com.fawry.pages.b2BProduct.ProductBranchManagement;
 import com.fawry.tests.base.TestBase;
 import org.testng.annotations.BeforeClass;
@@ -14,7 +15,7 @@ public class ProductBranchManagementTest extends TestBase {
 
     ProductBranchManagement branchObj;
     String environment = com.fawry.constants.GeneralConstants.DELTA_ENVIRONMENT;
-    private static final Properties testdata = propertiesReader.loadPropertiesFromFile(B2BMerchantFile_NameConstants.productBranchManagement_File_Name);
+    private static final Properties testdata = propertiesReader.loadPropertiesFromFile(B2BProductFile_NameConstants.productBranchManagement_File_Name);
 
     @BeforeClass
     public void initial() throws Exception {

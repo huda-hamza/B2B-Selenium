@@ -14,29 +14,11 @@ import java.util.Properties;
 
 public class PropertiesReader {
 
-    private Path getConfigurationFilePath(String configurationFileName) {
+    private Path getConfigurationFilePath(String filePath) {
         return Paths.get(System.getProperty(GeneralConstants.USER_DIR),
-                PathConstants.CONFIGURATION_DIR_PATH,
-                configurationFileName);
+                filePath);
     }
 
-//    public Properties loadPropertiesFromFile(String fileName) {
-//        Properties properties = new Properties();
-//        Path filePath = getConfigurationFilePath(fileName);
-//
-//        if (!Files.exists(filePath)) {
-//            System.err.println("Error: File '" + fileName + "' does not exist.");
-//            return properties; // return empty properties
-//        }
-//
-//        try (InputStream input = Files.newInputStream(filePath)) {
-//            // Load properties from the input stream
-//            properties.load(input);
-//        } catch (IOException e) {
-//            System.err.println("Error loading properties from file: " + e.getMessage());
-//        }
-//        return properties;
-//    }
     public Properties loadPropertiesFromFile(String fileName) {
         Properties properties = new Properties();
         Path filePath = getConfigurationFilePath(fileName);

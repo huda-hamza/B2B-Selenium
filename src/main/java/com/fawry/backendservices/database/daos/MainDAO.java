@@ -1,6 +1,6 @@
 package com.fawry.backendservices.database.daos;
 
-import com.fawry.constants.B2BMerchantFile_NameConstants;
+import com.fawry.constants.b2BMerchant.B2BMerchantFile_NameConstants;
 import com.fawry.constants.GeneralConstants;
 import com.fawry.utilities.PropertiesReader;
 

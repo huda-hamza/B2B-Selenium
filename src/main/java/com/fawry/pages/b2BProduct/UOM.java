@@ -1,7 +1,8 @@
 package com.fawry.pages.b2BProduct;
 
-import com.fawry.constants.B2BMerchantFile_NameConstants;
-import com.fawry.constants.ProductDataConstant;
+import com.fawry.constants.b2BMerchant.B2BMerchantFile_NameConstants;
+import com.fawry.constants.b2bProduct.B2BProductFile_NameConstants;
+import com.fawry.constants.b2bProduct.ProductDataConstant;
 import com.fawry.pages.base.PageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +14,7 @@ public class UOM extends PageBase {
         super(driver);
     }
 
-    private static final Properties URl = propertiesReader.loadPropertiesFromFile(B2BMerchantFile_NameConstants.Product_UOM_File_Name);
+    private static final Properties URl = propertiesReader.loadPropertiesFromFile(B2BProductFile_NameConstants.Product_UOM_File_Name);
     private By uOmEnglishName=By.xpath("//input[@name='nameEn']");
     private By uOmArabicName=By.xpath("//input[@name='nameAr']");
     private By uomCode=By.xpath("//input[@placeholder='Unit Of Measure Code']");

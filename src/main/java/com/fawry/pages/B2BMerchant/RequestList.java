@@ -1,7 +1,7 @@
-package com.fawry.pages.B2BMerchant;
+package com.fawry.pages.b2BMerchant;
 
-import com.fawry.constants.B2BMerchantFile_NameConstants;
-import com.fawry.constants.MerchantdataConstant;
+import com.fawry.constants.b2BMerchant.B2BMerchantFile_NameConstants;
+import com.fawry.constants.b2BMerchant.MerchantdataConstant;
 import com.fawry.pages.base.HomePage;
 import com.fawry.pages.base.PageBase;
 import org.openqa.selenium.By;
