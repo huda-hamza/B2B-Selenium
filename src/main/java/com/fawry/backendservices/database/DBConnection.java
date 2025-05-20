@@ -2,7 +2,6 @@ package com.fawry.backendservices.database;
 
 
 import com.fawry.constants.DatabaseConstants;
-import com.fawry.constants.GeneralConstants;
 import com.fawry.utilities.PropertiesReader;
 
 import java.sql.*;

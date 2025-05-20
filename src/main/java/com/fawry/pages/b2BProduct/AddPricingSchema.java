@@ -1,6 +1,5 @@
 package com.fawry.pages.b2BProduct;
 
-import com.fawry.constants.b2BMerchant.B2BMerchantFile_NameConstants;
 import com.fawry.constants.GeneralConstants;
 import com.fawry.constants.PathConstants;
 import com.fawry.constants.b2bProduct.B2BProductFile_NameConstants;

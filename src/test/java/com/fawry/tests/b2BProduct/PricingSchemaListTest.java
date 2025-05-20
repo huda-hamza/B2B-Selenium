@@ -1,6 +1,5 @@
 package com.fawry.tests.b2BProduct;
 
-import com.fawry.constants.b2BMerchant.B2BMerchantFile_NameConstants;
 import com.fawry.constants.b2bProduct.B2BProductFile_NameConstants;
 import com.fawry.constants.b2bProduct.ProductDataConstant;
 import com.fawry.pages.b2BProduct.AddPricingSchema;

@@ -1,6 +1,5 @@
 package com.fawry.listeners;
 
-import com.fawry.utilities.ExcelReader;
 import com.fawry.utilities.TestResult;
 import org.testng.ITest;
 import org.testng.ITestContext;

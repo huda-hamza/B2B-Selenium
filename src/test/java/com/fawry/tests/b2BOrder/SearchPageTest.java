@@ -1,6 +1,5 @@
 package com.fawry.tests.b2BOrder;
 
-import com.fawry.pages.b2BOrder.DashBord;
 import com.fawry.pages.b2BOrder.SearchPage;
 import com.fawry.tests.base.TestBase;
 import org.testng.annotations.BeforeClass;

@@ -78,7 +78,7 @@ public class CustomerApplicationTest extends TestBase {
             throw new Exception(e);
         }}
 
-    @Test(priority = 4, description = "#3")
+        @Test(priority = 4, description = "#3")
     public void cancelDeletingFromItemSelectedNewMerchant() throws Exception {
       try{  CST.selectNationalIDNewMerchant();
         CST.deleteIconInSelectedTemplate();

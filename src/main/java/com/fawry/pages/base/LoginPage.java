@@ -1,6 +1,5 @@
 package com.fawry.pages.base;
 
-import com.fawry.utilities.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -13,6 +12,7 @@ public class LoginPage extends PageBase {
     By mailLocator = By.xpath("//input[@id='userId']");
     By passwordLocator = By.xpath("//input[@id='password']");
     By loginBtn = By.id("loginbtn");
+
 
     public boolean loginSuccessfully(String mail, String password) {
         HomePage homePage = new HomePage(driver);

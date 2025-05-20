@@ -1,7 +1,6 @@
 package com.fawry.utilities;
 
 import com.fawry.constants.GeneralConstants;
-import com.fawry.constants.PathConstants;
 
 import java.io.IOException;
 import java.io.InputStream;
